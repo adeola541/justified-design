@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD | Justified Design</title>
+    <meta name="description" content="Gaming-style digital design portfolio.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-content">
+            <h1 class="glitch" data-text="JUSTIFIED ADESINA...">JUSTIFIED ADESINA...</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">JD<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">HOME</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+        </ul>
+        <div class="nav-button">
+            <a href="#contact" class="btn primary-btn" data-text="CONTACT">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Main Content wrapper for smooth scrolling -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- Hero Section -->
+            <section id="home" class="hero section">
+                <div class="hero-bg">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <!-- <p class="hero-subtitle">[ USER DETECTED ]</p> -->
+                        <h1 class="hero-desc" data-text="Hello, My Name is">Hello, My Name is</h1>
+                        <h1 id="hero-name" class="hero-title outline-text">JUSTIFIED<br>ADESINA</h1>
+                        <p id="hero-subtitle" class="hero-subtitle" style="font-size: 1.2rem; color: var(--accent-color); letter-spacing: 2px; margin-bottom: 0.5rem;">Product Designer | 3 Years Experience</p>
+                        <p id="hero-bio" class="hero-desc" style="max-width: 600px; margin-top: 0; margin-bottom: 2rem; color: var(--text-muted); line-height: 1.6;"></p>
+                        <div class="hero-cta" id="hero-cta-container">
+                            <a href="#contact" class="btn secondary-btn" data-text="LET'S COLLABORATE">LET'S COLLABORATE</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-profile-image">
+                        <img id="hero-avatar" src="img/enhanced_image.png" alt="Profile Avatar" class="profile-avatar">
+                    </div>
+
+                    <div class="hero-social" id="hero-social-handles">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <p>SCROLL DOWN</p>
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="about" class="about-me section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">ABOUT ME</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="about-grid">
+                        <div class="about-left">
+                            <h3 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-head);">PROFESSIONAL SUMMARY</h3>
+                            <p class="about-text">Creative and detail-oriented Product Designer with experience enhancing digital products through user-centered design, wireframing, prototyping, and visual design. Known for high productivity, strong collaboration, and a commitment to delivering intuitive and engaging user experiences. Skilled in UX research, interface design, and modern design tools.</p>
+                        </div>
+                        <div class="about-right">
+                            <h3 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-head);">SERVICES OFFERED</h3>
+                            <div class="service-list">
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">UI/UX Design <i class="fas fa-arrow-right"></i></a>
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">Interaction Design <i class="fas fa-arrow-right"></i></a>
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">Brand Identity <i class="fas fa-arrow-right"></i></a>
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">Web Development <i class="fas fa-arrow-right"></i></a>
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">Motion Design <i class="fas fa-arrow-right"></i></a>
+                                <a href="#experience" class="service-chip btn secondary-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">Product Design <i class="fas fa-arrow-right"></i></a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">EXPERIENCE</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="experience-summary" style="margin-bottom: 4rem;">
+                        <h3 style="color: var(--neon-cyan); font-family: var(--font-head); font-size: 2.5rem; letter-spacing: 2px;">3 YEARS OF EXPERIENCE</h3>
+                        <p class="about-text">Known for high productivity, strong collaboration, and a commitment to delivering intuitive and engaging user experiences.</p>
+                    </div>
+                    
+                    <div class="timeline" id="dyn-experience">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="education section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">EDUCATION</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="timeline" id="dyn-education">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">SKILL TREE</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="skills-grid" id="dyn-skills" style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;">
+                        <!-- JS injected dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Tech Tree Section -->
+            <section id="projects" class="projects section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">WORK / PORTFOLIO</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="portfolio-filters" style="display: flex; gap: 1rem; margin-bottom: 3rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn secondary-btn btn-small filter-btn" data-filter="All" style="background: var(--neon-cyan); color: #000; font-family: var(--font-head); letter-spacing: 1px;">All</button>
+                        <button class="btn secondary-btn btn-small filter-btn" data-filter="Real Project" style="font-family: var(--font-head); letter-spacing: 1px;">Real Project</button>
+                        <button class="btn secondary-btn btn-small filter-btn" data-filter="Exploration" style="font-family: var(--font-head); letter-spacing: 1px;">Exploration</button>
+                    </div>
+                    
+                    <div class="tech-tree" id="dyn-projects">
+                        <div class="tree-line"></div>
+                        <!-- JS Injected -->
+                    </div>
+                    
+                    <div class="view-all-container" style="display: flex; justify-content: center; margin-top: 4rem;">
+                        <a href="view.html" class="btn primary-btn" data-text="VIEW ALL WORK">VIEW ALL WORK</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">MEDIA LOG</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="gallery-grid" id="dyn-gallery">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
+                <div class="container">
+                    <div class="contact-wrapper centered-contact">
+                        <div class="contact-info">
+                            <h2 class="section-title">Get in Touch</br><span style="font-size: 0.5em; color: var(--accent-color); text-transform: uppercase;">DISCUSS A PROJECT</span></h2>
+                            <p class="contact-desc" style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">To initiate contact or discuss a collaboration, please send a direct message (DM) on any of my active social media platforms.</p>
+                        </div>
+                        <!-- Dynamic social handles rendered from localStorage -->
+                        <div id="contact-social-handles" class="contact-social-grid">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <a class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</a>
+                <a class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</a>
+                <div class="lightbox-img-wrapper">
+                    <img class="lightbox-content" id="lightbox-img" style="display:none;">
+                    <video class="lightbox-content" id="lightbox-video" controls autoplay loop style="display:none; max-width:100%; max-height:80vh;"></video>
+                </div>
+                <div id="lightbox-caption"></div>
+            </div>
+            
+            <footer>
+                <div class="footer-content">
+                    <div class="logo">JD<span class="dot">.</span></div>
+                    <p>SYSTEM OFFLINE. &copy; 2026 JUSTIFIED DESIGN.</p>
+                </div>
+            </footer>
+            
+        </div>
+    </div>
+
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Vanilla Tilt for 3D card effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // --- Lightbox Global Logic ---
+        let lightboxImages = [];
+        let currentLightboxIndex = 0;
+
+        function openLightbox(imgs, index = 0) {
+            lightboxImages = imgs;
+            currentLightboxIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            if(lightbox) {
+                lightbox.style.display = 'flex';
+                updateLightboxImage();
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const video = document.getElementById('lightbox-video');
+            if(lightbox) lightbox.style.display = 'none';
+            if(video) { video.pause(); video.src = ''; }
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const video = document.getElementById('lightbox-video');
+            const caption = document.getElementById('lightbox-caption');
+
+            if(!img || !video || lightboxImages.length === 0) return;
+
+            const currentMedia = lightboxImages[currentLightboxIndex];
+            const isVideo = /\.(mp4|webm|ogg)$/i.test(currentMedia) || currentMedia.startsWith('data:video');
+
+            if (isVideo) {
+                img.style.display = 'none';
+                video.style.display = 'block';
+                video.src = currentMedia;
+                video.load();
+                video.play();
+            } else {
+                video.pause();
+                video.src = '';
+                video.style.display = 'none';
+                img.style.display = 'block';
+                img.src = currentMedia;
+            }
+
+            if(caption) caption.innerText = `View ${currentLightboxIndex + 1} of ${lightboxImages.length}`;
+        }
+
+        function changeLightboxImage(n) {
+            currentLightboxIndex += n;
+            if (currentLightboxIndex >= lightboxImages.length) currentLightboxIndex = 0;
+            if (currentLightboxIndex < 0) currentLightboxIndex = lightboxImages.length - 1;
+            updateLightboxImage();
+        }
+
+        // Close lightbox on click outside image
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+    <script>
+        // Filtering Logic for index.html
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.tree-node.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => {
+                    b.style.background = 'transparent';
+                    b.style.color = 'var(--text-color)';
+                });
+                btn.style.background = 'var(--neon-cyan)';
+                btn.style.color = '#000';
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'All' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        // Ensure animation kicks back in
+                        card.style.opacity = '1';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Refresh ScrollTrigger as heights changed
+                if(typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+            });
+        });
+    </script>
+    <script>
+        // --- GLOBAL DATAMODEL LOADER ---
+        // Reads from identical structure created by admin.html
+        function loadDynamicSiteData() {
+            const getSafe = (key, defaultVal) => {
+                const item = localStorage.getItem('jd_' + key);
+                return item ? JSON.parse(item) : defaultVal;
+            };
+
+            const profile = getSafe('profile', { name: "JUSTIFIED ADESINA", title: "Product Designer", bio: "", avatar: "img/enhanced_image.png", resume: "docs/resume.pdf" });
+            const experience = getSafe('experience', []);
+            const education = getSafe('education', []);
+            const skills = getSafe('skills', ['Figma', 'UI/UX Design', 'Prototyping']);
+            const projects = getSafe('projects', []);
+            const socials = getSafe('socials', []);
+
+            // 1. Render Hero Profile & Resume
+            const nameEl = document.getElementById('hero-name');
+            const titleEl = document.getElementById('hero-subtitle');
+            const bioEl = document.getElementById('hero-bio');
+            const avatarEl = document.getElementById('hero-avatar');
+            const ctaContainer = document.getElementById('hero-cta-container');
+
+            if (nameEl) nameEl.innerHTML = profile.name.replace(' ', '<br>');
+            if (titleEl) titleEl.innerText = profile.title;
+            if (bioEl) bioEl.innerText = profile.bio;
+            if (avatarEl) avatarEl.src = profile.avatar;
+            
+            // Handle Resume Button Update
+            const resumeBtn = document.getElementById('dyn-resume-btn');
+            if (profile.resume) {
+                const isDataUrl = profile.resume.startsWith('data:');
+                if (!resumeBtn) {
+                    ctaContainer.innerHTML += `<a id="dyn-resume-btn" href="${profile.resume}" ${isDataUrl ? 'download="Justified_Adesina_Resume.pdf"' : 'target="_blank"'} class="btn primary-btn" style="margin-left: 1rem;"><i class="fas fa-download"></i> RESUME</a>`;
+                } else {
+                    resumeBtn.href = profile.resume;
+                    if (isDataUrl) {
+                        resumeBtn.setAttribute('download', 'Justified_Resume.pdf');
+                        resumeBtn.removeAttribute('target');
+                    } else {
+                        resumeBtn.setAttribute('target', '_blank');
+                        resumeBtn.removeAttribute('download');
+                    }
+                }
+            } else if (resumeBtn) {
+                resumeBtn.remove();
+            }
+
+            // 2. Render Social Handles (Hero + Contact)
+            const heroSocials = document.getElementById('hero-social-handles');
+            const contactSocials = document.getElementById('contact-social-handles');
+            const socialHtml = socials.map(s => `
+                <a href="${s.url}" target="_blank" rel="noopener" class="hero-social-icon" title="${s.platform}"><i class="${s.icon}"></i></a>
+            `).join('');
+            const contactHtml = socials.map(s => `
+                <a href="${s.url}" target="_blank" rel="noopener" class="contact-handle-card" title="DM on ${s.platform}">
+                    <div class="contact-handle-icon"><i class="${s.icon}"></i></div>
+                    <div class="contact-handle-info">
+                        <span class="contact-handle-platform">${s.platform}</span>
+                        <span class="contact-handle-user">${s.username}</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-handle-arrow"></i>
+                </a>
+            `).join('');
+            if(heroSocials) heroSocials.innerHTML = socialHtml;
+            if(contactSocials) contactSocials.innerHTML = contactHtml;
+
+            // 3. Render Experience
+            const expContainer = document.getElementById('dyn-experience');
+            if(expContainer && experience.length > 0) {
+                expContainer.innerHTML = experience.map((exp, i) => `
+                    <div class="timeline-item tilt-card" data-tilt>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel" style="background: rgba(15, 15, 20, 0.6); padding: 2rem; border-left: 3px solid var(--accent-color); margin-bottom: 2rem;">
+                            <h4 style="color: var(--text-muted); font-family: var(--font-head); font-size: 1rem;">${exp.dates}</h4>
+                            <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">${exp.company}</h3>
+                            <p style="font-size: 1.1rem; color: var(--accent-color); margin-bottom: 1rem;">${exp.role}</p>
+                            <ul style="color: #aaa; list-style-type: none; line-height: 1.6;">
+                                ${exp.desc ? exp.desc.split('- ').filter(t=>t.trim()!=='').map(bullet => `<li>● ${bullet}</li>`).join('') : ''}
+                            </ul>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 4. Render Education
+            const eduContainer = document.getElementById('dyn-education');
+            if(eduContainer && education.length > 0) {
+                eduContainer.innerHTML = education.map((edu, i) => `
+                    <div class="timeline-item tilt-card" data-tilt>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel" style="background: rgba(15, 15, 20, 0.6); padding: 2rem; border-left: 3px solid var(--accent-color); margin-bottom: 2rem;">
+                            <h4 style="color: var(--text-muted); font-family: var(--font-head); font-size: 1rem;">${edu.dates}</h4>
+                            <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">${edu.school}</h3>
+                            <p style="font-size: 1.1rem; color: var(--accent-color);">${edu.degree}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 5. Render Skills Tree
+            const skillContainer = document.getElementById('dyn-skills');
+            if(skillContainer) {
+                skillContainer.innerHTML = skills.map(skill => `
+                    <div class="glass-panel tilt-card" style="padding: 1rem 2rem; border-radius: 50px; background: rgba(16, 185, 129, 0.05); border: 1px solid var(--accent-color); font-size: 1.2rem; display:inline-block; font-weight: 500;" data-tilt>
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 8px;"></i> ${skill}
+                    </div>
+                `).join('');
+            }
+
+            // 6. Render Projects Tree (with dynamic query param injection for single project rendering)
+            const projContainer = document.getElementById('dyn-projects');
+            if(projContainer) {
+                projContainer.innerHTML = `<div class="tree-line"></div>` + projects.map((proj, i) => `
+                    <div class="tree-node ${i % 2 === 0 ? 'left' : 'right'} reveal-node project-card" data-category="${proj.category}">
+                        <div class="node-connector"></div>
+                        <div class="node-content glass-panel tilt-card" data-tilt>
+                            <div class="project-badge ${proj.category === 'Real Project' ? 'badge-real' : 'badge-exploration'}">
+                                <i class="fas ${proj.category === 'Real Project' ? 'fa-check-circle' : 'fa-vial'}"></i> ${proj.category}
+                            </div>
+                            <img src="${proj.img}" alt="${proj.title}" class="project-thumb">
+                            <h3 style="margin-top: 1rem;">${i+1}. ${proj.title}</h3>
+                            <p>${proj.desc}</p>
+                            <!-- Query params appended to automatically carry context to dynamic project page -->
+                            <a href="${proj.link}?id=${proj.id}" class="btn secondary-btn btn-small" data-text="View Details">View Details</a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 7. Render Gallery
+            const galleryContainer = document.getElementById('dyn-gallery');
+            const gallery = getSafe('gallery', []);
+            if(galleryContainer && gallery.length > 0) {
+                galleryContainer.innerHTML = gallery.map((item, idx) => {
+                    const isVideo = /\.(mp4|webm|ogg)$/i.test(item) || item.startsWith('data:video');
+                    return `
+                    <div class="gallery-item" onclick="openLightbox(${JSON.stringify(gallery).replace(/"/g, '&quot;')}, ${idx})">
+                        ${isVideo ? 
+                            `<video src="${item}" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; pointer-events:none;"></video>` : 
+                            `<img src="${item}" alt="Gallery Item">`
+                        }
+                        <div class="gallery-overlay"><p>${isVideo ? 'PROTOTYPE DEMO' : 'VIEW IMAGE'}</p></div>
+                    </div>
+                `}).join('');
+            }
+        }
+
+        // Initialize Dynamic Content
+        loadDynamicSiteData();
+
+        // Must run after DOM nodes are injected
+        setTimeout(() => {
+            if(typeof VanillaTilt !== 'undefined') VanillaTilt.init(document.querySelectorAll(".tilt-card"), { max: 15, speed: 400 });
+        }, 100);
+
+    </script>
+</body>
+</html>

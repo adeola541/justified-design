@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD | Fluent Language App</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader (Optional, skipping for project sub page so it loads faster) -->
+    
+    <!-- Navigation -->
+    <nav class="navbar scrolled" style="background: rgba(5, 5, 5, 0.9);">
+        <div class="logo">JD<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#home" class="nav-link">HOME</a></li>
+            <li><a href="index.html#projects" class="nav-link">BACK TO QUEST LOG</a></li>
+        </ul>
+        <div class="nav-button">
+            <a href="index.html#contact" class="btn primary-btn" data-text="CONTACT">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Main Content wrapper for smooth scrolling -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- Project Header Section -->
+            <section class="section" style="padding-top: 10rem; min-height: auto;">
+                <div class="container" style="position: relative;">
+                    <div class="project-badge badge-exploration" style="position: static; display: inline-flex; margin-bottom: 1rem;"><i class="fas fa-vial"></i> Exploration</div>
+                    <h1 class="hero-title-small glitch-text" data-text="FLUENT LANGUAGE APP">FLUENT LANGUAGE APP</h1>
+                    <p class="hero-desc" style="max-width: 800px; margin-top: 1rem;">A modern language learning platform designed with personalized learning paths, interactive lessons, and engaging UI to enhance global language acquisition.</p>
+                </div>
+            </section>
+
+            <!-- Project Image/Overview -->
+            <section class="section">
+                <div class="container">
+                    <div class="project-image-wrapper" style="height: 50vh; margin-bottom: 4rem; border-radius: 8px;">
+                        <img src="img/Frame 1.png" alt="Project Hero" style="width: 100%; height: 200%; object-fit:contain; border-radius: 8px; border: 1px solid var(--border-color); filter: hue-rotate(180deg);">
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">OVERVIEW</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="about-content" style="max-width: 100%;">
+                        <p class="about-text">Fluent is an innovative mobile application designed to transform modern language learning. It combines advanced technology with proven teaching methods to create a personalized, engaging, and effective learning experience.</p>
+                    </div>
+                </div>
+            </section>
+           
+            
+            <!-- Tools Used Section -->
+            <section class="section" style="min-height: auto;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">TOOLS LOADOUT</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                        <div class="skill-card tilt-card" data-tilt style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.2rem; color: var(--neon-cyan);">FIGMA</h3>
+                            <p style="font-size: 0.9rem;">Wireframing, High-fidelity prototyping, Design Systems</p>
+                        </div>
+                        <div class="skill-card tilt-card" data-tilt style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.2rem; color: var(--neon-cyan);">ILLUSTRATOR</h3>
+                            <p style="font-size: 0.9rem;">Custom iconography and vector illustrations</p>
+                        </div>
+                        <div class="skill-card tilt-card" data-tilt style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.2rem; color: var(--neon-cyan);">REACT NATIVE</h3>
+                            <p style="font-size: 0.9rem;">Assisted in layout translations and frontend styling</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Design Process -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">DESIGN PROCESS</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="about-content" style="max-width: 100%;">
+                        <p class="about-text"><strong style="color: var(--neon-magenta);">1. Discovery & Research:</strong> Conducted market analysis on local fast-food chains and identified gaps in user experience, particularly around checkout speed and menu clarity.</p>
+                        <p class="about-text"><strong style="color: var(--neon-magenta);">2. Wireframing:</strong> Developed low-fidelity sketches outlining the core user journey: Home -> Category -> Product Details -> Cart -> Checkout.</p>
+                        <p class="about-text"><strong style="color: var(--neon-magenta);">3. High-Fidelity & Usability:</strong> Applied the brand's vibrant colors (Deep Oranges and Reds) mimicking spices, creating a mouth-watering aesthetic that triggers appetite. Tested with 15 target demographic users.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="gallery section" style="padding-top: 2rem;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">PROJECT GALLERY</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="gallery-grid">
+                         <div class="gallery-item" onclick="openLightbox(['img/food1.png', 'img/fullfood.png', 'img/food3.png'])">
+                            <img src="img/NSB.png" alt="Process 3" style="filter: hue-rotate(180deg);">
+                            <div class="gallery-overlay"><p>FINAL SCREENS</p></div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(['img/gaming_cyberpunk_bg.png', 'img/gaming_cyberpunk_bg.png', 'img/gaming_cyberpunk_bg.png'])">
+                            <img src="img/" alt="Process 1">
+                            <div class="gallery-overlay"><p>WIREFRAMES</p></div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(['img/gaming_cyberpunk_bg.png', 'img/gaming_cyberpunk_bg.png', 'img/gaming_cyberpunk_bg.png'])">
+                            <img src="img/fullfood.png" alt="Process 2" style="filter: hue-rotate(90deg);">
+                            <div class="gallery-overlay"><p>UI COMPONENTS</p></div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Other Projects Section -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title" style="font-size: 2rem;">RELATED QUESTS</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="gallery-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <a href="#" class="gallery-item" style="height: 350px;">
+                            <img src="img/coffee.png" alt= "Coffee Shop App" style="filter: hue-rotate(90deg);">
+                            <div class="gallery-overlay" style="opacity: 1; background: rgba(0,0,0,0.5);"><p style="font-size: 1rem; color: #fff;">Coffee Shop App</p></div>
+                        </a>
+                        <a href="#" class="gallery-item" style="height: 350px;">
+                            <img src="img/Frame 1.png" alt="Fluent App" style="filter: hue-rotate(180deg);">
+                            <div class="gallery-overlay" style="opacity: 1; background: rgba(0,0,0,0.5);"><p style="font-size: 1rem; color: #fff;">Fluent Learning</p></div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <a class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</a>
+                <a class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</a>
+                <div class="lightbox-img-wrapper">
+                    <img class="lightbox-content" id="lightbox-img">
+                </div>
+                <div id="lightbox-caption"></div>
+            </div>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="logo">JD<span class="dot">.</span></div>
+                    <p>SYSTEM OFFLINE. &copy; 2026 JUSTIFIED DESIGN.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/justified-adesina-bbb77b22b" class="social-link" target="_blank">IN</a>
+                        <a href="https://dribbble.com/Justified-Design" class="social-link" target="_blank">DB</a>
+                        <a href="https://justifiedadesina.notion.site/My-Portfolio-1a29f2077c57802c9c04c50c437cf7ab" class="social-link" target="_blank">NO</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!-- Using the same script for animations -->
+    <script src="script.js"></script>
+</body>
+</html>

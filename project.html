@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD | Project Details</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader (Optional, skipping for project sub page so it loads faster) -->
+    
+    <!-- Navigation -->
+    <nav class="navbar scrolled" style="background: rgba(5, 5, 5, 0.9);">
+        <div class="logo">JD<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#home" class="nav-link">HOME</a></li>
+            <li><a href="index.html#projects" class="nav-link">BACK TO QUEST LOG</a></li>
+        </ul>
+        <div class="nav-button">
+            <a href="index.html#contact" class="btn primary-btn" data-text="CONTACT">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Main Content wrapper for smooth scrolling -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Project Header Section -->
+            <section class="section" style="padding-top: 10rem; min-height: auto;">
+                <div class="container" style="position: relative;">
+                    <div id="proj-badge" class="project-badge badge-real" style="position: static; display: inline-flex; margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> Real Project</div>
+                    <h1 id="proj-title" class="hero-title-small glitch-text" data-text="LOADING...">LOADING...</h1>
+                    <p id="proj-desc" class="hero-desc" style="max-width: 800px; margin-top: 1rem;"></p>
+                </div>
+            </section>
+
+            <!-- ⚡ Critical render: runs immediately before any external lib loads -->
+            <script>
+                (function() {
+                    try {
+                        const id = new URLSearchParams(window.location.search).get('id');
+                        const projects = JSON.parse(localStorage.getItem('jd_projects') || '[]');
+                        const p = projects.find(x => x.id === id);
+                        if (!p) return;
+                        // Title
+                        const titleEl = document.getElementById('proj-title');
+                        if (titleEl) { titleEl.innerText = p.title; titleEl.setAttribute('data-text', p.title); }
+                        // Short Description
+                        const descEl = document.getElementById('proj-desc');
+                        if (descEl) descEl.innerText = p.desc;
+                        // Badge
+                        const badgeEl = document.getElementById('proj-badge');
+                        if (badgeEl) {
+                            badgeEl.className = 'project-badge ' + (p.category === 'Real Project' ? 'badge-real' : 'badge-exploration');
+                            badgeEl.innerHTML = '<i class="fas ' + (p.category === 'Real Project' ? 'fa-check-circle' : 'fa-vial') + '"></i> ' + p.category;
+                        }
+                        // Hero image — set src early so browser can start fetching
+                        const imgEl = document.getElementById('proj-img');
+                        if (imgEl) imgEl.src = p.img;
+                    } catch(e) {}
+                })();
+            </script>
+
+            <!-- Project Image/Overview -->
+            <section class="section">
+                <div class="container">
+                    <div class="project-image-wrapper" style="height: 50vh; margin-bottom: 4rem; border-radius: 8px;">
+                        <img id="proj-img" src="" alt="Project Hero" style="width: 100%; height: 200%; object-fit:contain; border-radius: 8px; border: 1px solid var(--border-color);">
+                    </div>
+                </div>
+                
+                <div class="container" id="overview-container" style="display:none;">
+                    <div class="section-header">
+                        <h2 class="section-title">OVERVIEW</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="about-content" style="max-width: 100%;">
+                        <p id="proj-full-desc" class="about-text"></p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tools Used Section -->
+            <section class="section" id="tools-section" style="min-height: auto; display:none;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">TOOLS LOADOUT</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="skills-grid" id="dyn-tools" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Design Process -->
+            <section class="section" id="process-section" style="display:none;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">DESIGN PROCESS</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="about-content" style="max-width: 100%;" id="dyn-process">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="gallery section" id="gallery-section" style="padding-top: 2rem; display:none;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">PROJECT GALLERY</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="gallery-grid" id="dyn-gallery">
+                         <!-- JS injected -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Other Projects Section -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title" style="font-size: 2rem;">RELATED QUESTS</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="gallery-grid" id="dyn-related" style="grid-template-columns: repeat(2, 1fr);">
+                        <!-- JS Injected -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <a class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</a>
+                <a class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</a>
+                <div class="lightbox-img-wrapper">
+                    <img class="lightbox-content" id="lightbox-img" style="display:none;">
+                    <video class="lightbox-content" id="lightbox-video" controls autoplay loop style="display:none; max-width:100%; max-height:80vh;"></video>
+                </div>
+                <div id="lightbox-caption"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // --- Lightbox Global Logic for Project Page ---
+        let lightboxImages = [];
+        let currentLightboxIndex = 0;
+
+        function openLightbox(imgs, index = 0) {
+            lightboxImages = imgs;
+            currentLightboxIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            if(lightbox) {
+                lightbox.style.display = 'flex';
+                updateLightboxImage();
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const video = document.getElementById('lightbox-video');
+            if(lightbox) lightbox.style.display = 'none';
+            if(video) { video.pause(); video.src = ''; }
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const video = document.getElementById('lightbox-video');
+            const caption = document.getElementById('lightbox-caption');
+
+            if(!img || !video || lightboxImages.length === 0) return;
+
+            const currentMedia = lightboxImages[currentLightboxIndex];
+            const isVideo = /\.(mp4|webm|ogg)$/i.test(currentMedia) || currentMedia.startsWith('data:video');
+
+            if (isVideo) {
+                img.style.display = 'none';
+                video.style.display = 'block';
+                video.src = currentMedia;
+                video.load();
+                video.play();
+            } else {
+                video.pause();
+                video.src = '';
+                video.style.display = 'none';
+                img.style.display = 'block';
+                img.src = currentMedia;
+            }
+
+            if(caption) caption.innerText = `View ${currentLightboxIndex + 1} of ${lightboxImages.length}`;
+        }
+
+        function changeLightboxImage(n) {
+            currentLightboxIndex += n;
+            if (currentLightboxIndex >= lightboxImages.length) currentLightboxIndex = 0;
+            if (currentLightboxIndex < 0) currentLightboxIndex = lightboxImages.length - 1;
+            updateLightboxImage();
+        }
+
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target == lightbox) closeLightbox();
+        }
+    </script>
+    <script src="script.js"></script>
+    <script>
+        function renderDynamicProject() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            const storedProjects = localStorage.getItem('jd_projects');
+            const projects = storedProjects ? JSON.parse(storedProjects) : [];
+            const project = projects.find(p => p.id === projectId);
+
+            if (!project) {
+                document.getElementById('proj-title').innerText = "PROJECT NOT FOUND";
+                document.getElementById('proj-desc').innerText = "Please return to the portfolio and select a valid project.";
+                return;
+            }
+
+            // Basic Info
+            document.getElementById('proj-title').innerText = project.title;
+            document.getElementById('proj-title').setAttribute('data-text', project.title);
+            document.getElementById('proj-desc').innerText = project.desc;
+            document.getElementById('proj-img').src = project.img;
+            
+            const badgeEl = document.getElementById('proj-badge');
+            badgeEl.className = 'project-badge ' + (project.category === 'Real Project' ? 'badge-real' : 'badge-exploration');
+            badgeEl.innerHTML = `<i class="fas ${project.category === 'Real Project' ? 'fa-check-circle' : 'fa-vial'}"></i> ${project.category}`;
+
+            // Overview
+            if (project.fullDesc) {
+                document.getElementById('overview-container').style.display = 'block';
+                document.getElementById('proj-full-desc').innerText = project.fullDesc;
+            }
+
+            // Tools Loadout
+            if (project.tools) {
+                document.getElementById('tools-section').style.display = 'block';
+                const toolsList = project.tools.split(',');
+                document.getElementById('dyn-tools').innerHTML = toolsList.map(t => `
+                    <div class="skill-card tilt-card" data-tilt style="padding: 1.5rem; text-align: center;">
+                        <h3 style="font-size: 1.2rem; color: var(--accent-color);">${t.trim()}</h3>
+                    </div>
+                `).join('');
+            }
+
+            // Design Process
+            if (project.process) {
+                 document.getElementById('process-section').style.display = 'block';
+                 // Assume new lines or steps starting with numbers
+                 const processSteps = project.process.split('\\n');
+                 document.getElementById('dyn-process').innerHTML = processSteps.map(step => `
+                    <p class="about-text" style="background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 2px solid var(--accent-color); border-radius: 4px; margin-bottom: 1rem;">
+                        ${step}
+                    </p>
+                 `).join('');
+            }
+
+            // Specific Gallery
+            if (project.gallery) {
+                document.getElementById('gallery-section').style.display = 'block';
+                const mediaItems = project.gallery.split(',').map(s=>s.trim());
+                document.getElementById('dyn-gallery').innerHTML = mediaItems.map((item, idx) => {
+                    const isVideo = item.toLowerCase().endsWith('.mp4') || item.toLowerCase().endsWith('.webm');
+                    return `
+                        <div class="gallery-item" onclick="openLightbox(${JSON.stringify(mediaItems).replace(/"/g, '&quot;')}, ${idx})">
+                            ${isVideo ? 
+                                `<video src="${item}" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; pointer-events:none;"></video>` : 
+                                `<img src="${item}" alt="Gallery Image ${idx+1}">`
+                            }
+                            <div class="gallery-overlay"><p>${isVideo ? 'PROTOTYPE DEMO' : 'VIEW IMAGE'}</p></div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Related Quests (Filter out current, grab max 2)
+            const related = projects.filter(p => p.id !== projectId).slice(0, 2);
+            if (related.length > 0) {
+                document.getElementById('dyn-related').innerHTML = related.map(p => `
+                    <a href="${p.link}?id=${p.id}" class="gallery-item" style="height: 350px;">
+                        <img src="${p.img}" alt="${p.title}">
+                        <div class="gallery-overlay" style="opacity: 1; background: rgba(0,0,0,0.5);">
+                            <p style="font-size: 1rem; color: #fff;">${p.title}</p>
+                        </div>
+                    </a>
+                `).join('');
+            } else {
+                document.getElementById('dyn-related').parentElement.parentElement.style.display = 'none'; // Hide section if no related
+            }
+            
+            // Re-init generic plugins
+            setTimeout(() => {
+                if(typeof VanillaTilt !== 'undefined') VanillaTilt.init(document.querySelectorAll(".tilt-card"), { max: 15, speed: 400 });
+            }, 100);
+        }
+
+        renderDynamicProject();
+    </script>
+</body>
+</html>
