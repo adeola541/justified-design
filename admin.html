@@ -509,7 +509,7 @@
                 </div>`;
             }).join('');
             // Update the hidden serialized field
-            document.getElementById('proj-gallery').value = projGalleryItems.join(', ');
+            document.getElementById('proj-gallery').value = projGalleryItems.join(' | ');
         }
 
         function removeProjGalleryItem(idx) {
@@ -585,7 +585,13 @@
         function editProject(id) {
             const p = db.projects.find(x => x.id === id);
             if (!p) return;
-            projGalleryItems = p.gallery ? p.gallery.split(',').map(s => s.trim()).filter(Boolean) : [];
+            let items = [];
+            if (p.gallery) {
+                if (p.gallery.includes(' | ')) items = p.gallery.split(' | ');
+                else if (p.gallery.includes(', ')) items = p.gallery.split(', ');
+                else items = p.gallery.split(',');
+            }
+            projGalleryItems = items.map(s => s.trim()).filter(Boolean);
             renderProjGalleryGrid();
             document.getElementById('projId').value = p.id;
             document.getElementById('proj-title').value = p.title;
