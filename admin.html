@@ -187,6 +187,20 @@
                 <div class="stat-card"><div class="stat-icon"><i class="fas fa-briefcase"></i></div><div class="stat-info"><h3 id="stat-exp">0</h3><p>Experiences</p></div></div>
                 <div class="stat-card"><div class="stat-icon"><i class="fas fa-images"></i></div><div class="stat-info"><h3 id="stat-gallery">0</h3><p>Media Items</p></div></div>
             </div>
+
+            <!-- Domain Transfer / Backup Utility -->
+            <div class="admin-card" style="margin-top: 3rem; background: rgba(16, 185, 129, 0.05); border: 1px dotted var(--accent-color);">
+                <h3 style="margin-bottom: 0.5rem;"><i class="fas fa-sync-alt"></i> Transfer Content Between Domains</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Hosting your site on Vercel? Local storage is domain-locked. Export your data from <strong>127.0.0.1</strong> 
+                    and Import it to the <strong>.vercel.app</strong> link to keep your projects.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <button onclick="exportData()" class="action-btn"><i class="fas fa-file-export"></i> Export JSON</button>
+                    <button onclick="document.getElementById('import-file').click()" class="action-btn"><i class="fas fa-file-import"></i> Import JSON</button>
+                    <input type="file" id="import-file" style="display:none;" onchange="importData(this)">
+                </div>
+            </div>
         </div>
 
         <!-- Profile Tab -->
@@ -677,6 +691,42 @@
             if(val) { db.gallery.push(val); saveData('gallery'); } 
             closeModals(); 
         });
+
+        // --- Backup & Restore (Domain Transfer) ---
+        function exportData() {
+            const data = {};
+            const keys = ['profile', 'skills', 'experience', 'education', 'projects', 'socials', 'gallery'];
+            keys.forEach(k => {
+                const item = localStorage.getItem('jd_' + k);
+                if (item) data[k] = JSON.parse(item);
+            });
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `JD_Portfolio_Backup_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importData(input) {
+            const file = input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (confirm("This will overwrite all current projects and bio settings. Continue?")) {
+                        Object.keys(data).forEach(k => {
+                            localStorage.setItem('jd_' + k, JSON.stringify(data[k]));
+                        });
+                        alert("Import Successful! Refreshing page...");
+                        window.location.reload();
+                    }
+                } catch (err) { alert("Error parsing backup file."); }
+            };
+            reader.readAsText(file);
+        }
 
         // Init
         loadData();
