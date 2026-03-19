@@ -428,9 +428,19 @@
             if (project.gallery) {
                 document.getElementById('gallery-section').style.display = 'block';
                 let rawItems = [];
-                if (project.gallery.includes(' | ')) rawItems = project.gallery.split(' | ');
-                else if (project.gallery.includes(', ')) rawItems = project.gallery.split(', ');
-                else rawItems = project.gallery.split(',');
+                if (project.gallery.includes(' | ')) {
+                    rawItems = project.gallery.split(' | ');
+                } else {
+                    // Be careful with splitting by comma-space because base64 data URLs 
+                    // might contain "data:image/jpeg;base64, "
+                    // We split by ", " only if it doesn't look like it's inside a base64 header.
+                    // Alternatively, we use a regex that looks for ", " as a separator between items
+                    rawItems = project.gallery.split(/,\s+(?=data:|img\/|http)/);
+                    if (rawItems.length === 1 && project.gallery.includes(', ')) {
+                         // Fallback for simple comma list if regex didn't match anything specific
+                         rawItems = project.gallery.split(', ');
+                    }
+                }
                 
                 const mediaItems = rawItems.map(s=>s.trim()).filter(Boolean);
                 document.getElementById('dyn-gallery').innerHTML = mediaItems.map((item, idx) => {
