@@ -474,7 +474,23 @@
         function loadDynamicSiteData() {
             const getSafe = (key, defaultVal) => {
                 const item = localStorage.getItem('jd_' + key);
-                return item ? JSON.parse(item) : (GLOBAL_BACKUP_DATA[key] || defaultVal);
+                if (item) {
+                    try {
+                        const parsed = JSON.parse(item);
+                        // If it's an array and it's empty, and we have backup, use backup
+                        if (Array.isArray(parsed) && parsed.length === 0 && GLOBAL_BACKUP_DATA[key] && GLOBAL_BACKUP_DATA[key].length > 0) {
+                            return GLOBAL_BACKUP_DATA[key];
+                        }
+                        // For profile (object), if name is missing or it's default placeholder, use backup
+                        if (key === 'profile' && (!parsed.name || parsed.name.includes("YOUR NAME")) && GLOBAL_BACKUP_DATA[key]) {
+                            return GLOBAL_BACKUP_DATA[key];
+                        }
+                        return parsed;
+                    } catch (e) {
+                        console.error("Error parsing localStorage for " + key, e);
+                    }
+                }
+                return (GLOBAL_BACKUP_DATA[key] || defaultVal);
             };
 
             const profile = getSafe('profile', { name: "JUSTIFIED ADESINA", title: "Product Designer", bio: "", avatar: "img/enhanced_image.png", resume: "docs/resume.pdf" });
